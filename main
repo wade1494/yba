@@ -1330,22 +1330,7 @@ Player.Idled:Connect(function()
     VirtualUser:ClickButton2(Vector2.new())
 end)
 
---// Mod Detection
-Players.PlayerAdded:Connect(function(Plr)
-    if Plr:IsInGroup(3194064) then
-		Player:Kick(`Xenon - Spotted a mod ({Plr.Name}), rejoining..`)
-    end
-end)
 
-TaskSpawn(function()
-    pcall(function()
-        for _, Plr in Players:GetPlayers() do
-            if Plr:IsInGroup(3194064) then
-                Player:Kick(`Xenon - Spotted a mod ({Plr.Name}), rejoining..`)
-            end
-        end
-    end)
-end)
 
 --// Hooks & Loading Screen
 if Xenon:GetHRP() and Xenon:IsSBR() == false then
